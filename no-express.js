@@ -52,9 +52,9 @@ var requestHandler = function(request, response) {
 }
 
 
-
+var port = process.env.PORT || 8080
 
 var server = http.createServer(requestHandler)
-server.listen(8080, function() {
-  console.log('Server listening on port 8080')
+server.listen(port, function() {
+  console.log('Server listening on port', port)
 })
