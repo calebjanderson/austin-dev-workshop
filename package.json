@@ -4,6 +4,7 @@
   "description": "Demo to accompany talk at Austin Developer week 2017",
   "main": "index.js",
   "scripts": {
+    "start": "node no-express.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Caleb Anderson <caleb.anderson130@gmail.com>",
