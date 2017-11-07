@@ -13,6 +13,9 @@ app.init = function() {
   })
 
   app.fetchMessages()
+
+  //Ping for new messages every 4 seconds
+  setInterval(app.fetchMessages, 4000)
 }
 
 app.fetchMessages = function() {
