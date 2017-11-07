@@ -20,7 +20,6 @@ app.init = function() {
 
 app.fetchMessages = function() {
   $.get('/messages', function(data) {
-    console.log('got em: ', data)
     var messagesArray = data.messages.map((m) => {
       var $message = $('<div></div>')
       var $username = $('<span class="username"/>')
