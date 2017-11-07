@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat app demo</title>
+</head>
+<body>
+  <h2>Austin Dev Chat 2017</h2>
+  <form id="message-form">
+    <label>Username</label><input name="username" />
+    <label>Message</label><input name="message" />
+    <button type="submit">Send</button>
+  </form>
+
+  <div>
+    <h4>Chat Room</h4>
+    <div id="message-list" />
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var app = {}
+
+    app.init = function() {
+      $('#message-form').on('submit', function(event) {
+        event.preventDefault()
+
+        var userInput = {
+          username: event.target.username.value,
+          message: event.target.message.value
+        }
+
+        app.postMessage(userInput)
+      })
+
+      app.fetchMessages()
+    }
+
+    app.renderMessages = function(messagesArray) {
+      var $messagesArray = messagesArray.map((m) => {
+          var $message = $('<div></div>')
+          var $username = $('<span class="username"/>')
+          var $text = $('<span class="message-text"/>')
+          $username.text(m.username)
+          $text.text(m.message)
+          $message.append($username, ': ', $text)
+          return $message
+        })
+        $('#message-list').empty()
+        $('#message-list').append($messagesArray.reverse())
+    }
+
+    app.fetchMessages = function() {
+      $.get('/messages', function(data) {
+        app.renderMessages(data.messages)
+      })
+    }
+
+    app.postMessage = function(message) {
+      $.post('/messages', message, function() {
+        $('input').val('')
+        app.fetchMessages()
+      })
+    }
+
+    $(document).ready( app.init )
+  </script>
+</body>
+</html>
