@@ -10,8 +10,18 @@
   "author": "Caleb Anderson <caleb.anderson130@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify-middleware": "^8.0.0"
   }
 }

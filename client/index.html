@@ -33,6 +33,8 @@
       })
 
       app.fetchMessages()
+      //Ping for new messages every 4 seconds
+      setInterval(app.fetchMessages, 4000)
     }
 
     app.renderMessages = function(messagesArray) {
