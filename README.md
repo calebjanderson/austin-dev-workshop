@@ -6,6 +6,15 @@ Demo application for use in Austin Developer Week 2017 presentation
 
 Requires [node](http://www.nodejs.org) with [npm](http://www.npmjs.com) to get started. (Reccomend Node >= v6.0.0 && npm >= v4.0.0)
 
+Clone down repositiory and cd into folder
+
+This is how you would start the server without express
+```bash
+npm install
+node server/no-express.js
+```
+If you want to start another version just change the filename to the type you want (`with-express.js`, `with-express-react`)
+
 ## Contents
 ```
 client/
