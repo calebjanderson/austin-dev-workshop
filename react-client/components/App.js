@@ -59,7 +59,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ 'border': 'solid 5px lightGreen', 'padding': '10px' }}>
         <h2>Austin Dev Chat 2017 + React</h2>
         {this.state.isLoading ? <div>Loading..</div> : <MessageForm handleFormSubmit={this.handleFormSubmit.bind(this)} />}
         <Chat messages={this.state.messages} />
