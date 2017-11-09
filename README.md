@@ -4,7 +4,7 @@ Demo application for use in Austin Developer Week 2017 presentation
 
 ## Installation
 
-Requires [node](http://www.nodejs.org) with [npm](http://www.npmjs.com) to get started. (Reccomend Node >= v6.0.0 && npm >= v4.0.0)
+Requires [node](http://www.nodejs.org) with [npm](http://www.npmjs.com) to get started. (Reccomend Node >= v6.10.0 && npm >= v5.3.0)
 
 Clone down repositiory and cd into folder
 ```bash
